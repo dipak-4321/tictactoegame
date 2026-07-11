@@ -38,4 +38,10 @@ body {
     color: rgb(254, 5, 34);
 
 }    
+#resetbtn {
+  margin: 2vmin;
+}
+p {
+margin-top: 5px;
+}
 
