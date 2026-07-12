@@ -1,5 +1,6 @@
 let boxbtn = document.querySelectorAll(".box");
-
+let boxcon = document.querySelector(".msgcon");
+let msg = document.querySelector("#msg");
 let turn0 = true;
 
 let winpatterns =[
@@ -27,6 +28,17 @@ box.addEventListener("click", ()=>{
     checkwinner();
 });
 });
+  
+const showWinner = (winner)=>{
+    msg.innerText = `Winner is ${winner}`;
+    boxcon.classList.remove("hide");
+    for (let box of boxbtn){
+        box.disabled = true;
+    }
+
+}
+
+
 const checkwinner = () => {
     for (let pattern of winpatterns){
         let val1 = boxbtn[pattern[0]].innerText;
@@ -36,6 +48,7 @@ const checkwinner = () => {
     if(val1 != "" && val2 != "" && val3 != ""){
         if(val1 === val2 && val2 === val3){
             console.log("winner",val1);
+            showWinner(val1);
         }
     }
     }
