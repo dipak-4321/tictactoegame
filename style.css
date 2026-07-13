@@ -9,9 +9,7 @@ body {
 }
    
 
-.msgcon {
 
-}
 #msg {
   color: rgb(244, 232, 5);
   font-size: 30px;
@@ -52,7 +50,4 @@ body {
   margin: 2vmin;
 }
 
-p {
-margin-top: 5px;
-}
 
