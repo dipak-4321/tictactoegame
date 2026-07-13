@@ -1,6 +1,8 @@
 let boxbtn = document.querySelectorAll(".box");
 let boxcon = document.querySelector(".msgcon");
 let msg = document.querySelector("#msg");
+let resetbtn = document.querySelector("#reset");
+
 let turn0 = true;
 
 let winpatterns =[
@@ -13,6 +15,7 @@ let winpatterns =[
     [0,4,8],
     [2,4,6],
 ];
+
 
 boxbtn.forEach((box)=>{
 box.addEventListener("click", ()=>{
@@ -32,12 +35,9 @@ box.addEventListener("click", ()=>{
 const showWinner = (winner)=>{
     msg.innerText = `Winner is ${winner}`;
     boxcon.classList.remove("hide");
-    for (let box of boxbtn){
-        box.disabled = true;
-    }
+    boxdisable();
 
 }
-
 
 const checkwinner = () => {
     for (let pattern of winpatterns){
@@ -52,5 +52,29 @@ const checkwinner = () => {
         }
     }
     }
-
 };
+
+const boxenable = () => {
+        for (let box of boxbtn){
+        box.disabled = false;
+        box.innerText = "";
+    }
+}
+const boxdisable = () => {
+    for (let box of boxbtn){
+        box.disabled = true;
+    }
+}
+
+const resetgame = () => {
+    turn0 = true;
+    boxenable();
+    boxcon.classList.add("hide");
+
+}
+
+resetbtn.addEventListener( "click",() => {
+    resetgame();
+})
+
+
