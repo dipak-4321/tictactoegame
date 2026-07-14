@@ -30,7 +30,10 @@ box.addEventListener("click", ()=>{
         box.innerText = "X";
         turn0 = true;
     }
+    draw = draw + 1;
     box.disabled = true;
+
+
     checkwinner();
 });
 });
@@ -60,8 +63,15 @@ const checkwinner = () => {
         if(val1 === val2 && val2 === val3){
             console.log("winner",val1);
             showWinner(val1);
+        }else {
+            if(draw === 9){
+                console.log("draw");
+                msg.innerText = "Draw";
+                boxcon.classList.remove("hide");
+            }
         }
     }
+
     }
 };
 
@@ -85,6 +95,8 @@ const resetgame = () => {
     player2.innerText="Player2 Score:";
        pl1 = 0;
        pl2 = 0;
+       draw = 0;
+
 }
 
 resetbtn.addEventListener( "click",() => {
@@ -94,6 +106,8 @@ const nextG = () => {
     turn0 = true;
     boxenable();
     boxcon.classList.add("hide");
+    draw = 0;
+
 };
  
 nextGame.addEventListener( "click" ,() =>{
