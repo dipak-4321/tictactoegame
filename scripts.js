@@ -39,7 +39,7 @@ box.addEventListener("click", ()=>{
 });
   
 const showWinner = (winner)=>{
-    msg.innerText = `Winner is ${winner}`;
+    msg.innerText = `Congratulation Winner is ${winner}`;
     boxcon.classList.remove("hide");
     boxdisable();
    
@@ -68,7 +68,7 @@ const checkwinner = () => {
         }
         if(draw === 9 && winnerFound !== true){
             console.log("draw");
-            msg.innerText = "Draw";
+            msg.innerText = "Game Draw PlayNextGame👍";
             boxcon.classList.remove("hide");
             }    
     }

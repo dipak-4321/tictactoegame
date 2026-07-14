@@ -5,6 +5,7 @@
   
 body {
     background-color: rgb(15, 103, 15);
+    /* background: linear-gradient(to right, red, blue); */
     text-align: center;
 }
    
@@ -62,7 +63,8 @@ body {
   border-radius: 2px;
   border: none;
   margin: 2vmin;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
+    background: linear-gradient(to right, red, blue);
   color: white;
 }
 
