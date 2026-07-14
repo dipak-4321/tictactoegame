@@ -18,9 +18,10 @@ let winpatterns =[
     [0,4,8],
     [2,4,6],
 ];
-     let pl1 = 0;
-      let pl2 = 0;
-     let draw = 0;
+    let pl1 = 0;
+    let pl2 = 0;
+    let draw = 0;
+
 boxbtn.forEach((box)=>{
 box.addEventListener("click", ()=>{
     if(turn0){
@@ -32,7 +33,6 @@ box.addEventListener("click", ()=>{
     }
     draw = draw + 1;
     box.disabled = true;
-
 
     checkwinner();
 });
@@ -50,7 +50,6 @@ const showWinner = (winner)=>{
         pl2=pl2+1;
         player2.innerText = `Player2 Score: ${pl2}`;
     }
-
 }
 
 const checkwinner = () => {
@@ -58,20 +57,21 @@ const checkwinner = () => {
         let val1 = boxbtn[pattern[0]].innerText;
         let val2 = boxbtn[pattern[1]].innerText;
         let val3 = boxbtn[pattern[2]].innerText;
+
+        let winnerFound = false;
     
     if(val1 != "" && val2 != "" && val3 != ""){
         if(val1 === val2 && val2 === val3){
             console.log("winner",val1);
             showWinner(val1);
-        }else {
-            if(draw === 9){
-                console.log("draw");
-                msg.innerText = "Draw";
-                boxcon.classList.remove("hide");
-            }
+            winnerFound = true;
         }
+        if(draw === 9 && winnerFound !== true){
+            console.log("draw");
+            msg.innerText = "Draw";
+            boxcon.classList.remove("hide");
+            }    
     }
-
     }
 };
 
@@ -86,17 +86,16 @@ const boxdisable = () => {
         box.disabled = true;
     }
 }
-
 const resetgame = () => {
     turn0 = true;
     boxenable();
     boxcon.classList.add("hide");
     player1.innerText="Player1 Score:";
     player2.innerText="Player2 Score:";
-       pl1 = 0;
-       pl2 = 0;
-       draw = 0;
 
+    pl1 = 0;
+    pl2 = 0;
+    draw = 0;
 }
 
 resetbtn.addEventListener( "click",() => {
@@ -107,7 +106,6 @@ const nextG = () => {
     boxenable();
     boxcon.classList.add("hide");
     draw = 0;
-
 };
  
 nextGame.addEventListener( "click" ,() =>{
