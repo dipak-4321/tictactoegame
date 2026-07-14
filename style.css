@@ -9,7 +9,9 @@ body {
         background: linear-gradient(to right, red, rgb(0, 140, 255), green);
     text-align: center;
 }
-   
+#owner {
+  color: white;
+} 
 
 
 #msg {
@@ -21,11 +23,10 @@ body {
 }
 
  .container {
-   height: 70vh;
+   height: 65vh;
    display: flex;
    justify-content: center;
    align-items: center;
-
 }
 
  .game {
