@@ -4,6 +4,7 @@ let msg = document.querySelector("#msg");
 let resetbtn = document.querySelector("#reset");
 let player1 = document.querySelector("#player1");
 let player2 = document.querySelector("#player2");
+let nextGame =document.querySelector("#next");
 
 let turn0 = true;
 
@@ -19,7 +20,7 @@ let winpatterns =[
 ];
      let pl1 = 0;
       let pl2 = 0;
-
+     let draw = 0;
 boxbtn.forEach((box)=>{
 box.addEventListener("click", ()=>{
     if(turn0){
@@ -30,8 +31,6 @@ box.addEventListener("click", ()=>{
         turn0 = true;
     }
     box.disabled = true;
-
-
     checkwinner();
 });
 });
@@ -86,13 +85,20 @@ const resetgame = () => {
     player2.innerText="Player2 Score:";
        pl1 = 0;
        pl2 = 0;
-
 }
 
 resetbtn.addEventListener( "click",() => {
     resetgame();
-})
-
+});
+const nextG = () => {
+    turn0 = true;
+    boxenable();
+    boxcon.classList.add("hide");
+};
+ 
+nextGame.addEventListener( "click" ,() =>{
+   nextG();
+});
 
 
 
