@@ -6,6 +6,7 @@
 body {
     background-color: rgb(15, 103, 15);
     /* background: linear-gradient(to right, red, blue); */
+        background: linear-gradient(to right, red, rgb(0, 140, 255), green);
     text-align: center;
 }
    

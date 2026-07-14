@@ -39,14 +39,22 @@ box.addEventListener("click", ()=>{
 });
   
 const showWinner = (winner)=>{
-    msg.innerText = `Congratulation Winner is ${winner}`;
-    boxcon.classList.remove("hide");
-    boxdisable();
+    // msg.innerText = `Congratulation Winner is ${winner}`;
+    // boxcon.classList.remove("hide");
+    // boxdisable();
    
     if(winner == 'O'){ 
+        msg.innerText = `Congratulation Winner is Player 1`;
+        boxcon.classList.remove("hide");
+        boxdisable();
+   
         pl1=pl1+1;
         player1.innerText =`Player1 Score: ${pl1}`;
     }else {
+        msg.innerText = `Congratulation Winner is Player 2`;
+        boxcon.classList.remove("hide");
+        boxdisable();
+   
         pl2=pl2+1;
         player2.innerText = `Player2 Score: ${pl2}`;
     }
