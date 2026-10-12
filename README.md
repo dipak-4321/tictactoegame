@@ -69,14 +69,14 @@ Open `index.html` in your browser, or use the Live Server extension in VS Code.
 ## 📂 Project Structure
 
 ```text
-tic-tac-toe/
+tic-tac-toegame/
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
 ```
 
-*Your actual filenames and folder structure may differ.*
+
 
 ## 🎓 Learning Objectives
 
